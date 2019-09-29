@@ -1,0 +1,307 @@
+<html>
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Asul' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap" rel="stylesheet"> 
+	</head>
+
+<style type="text/css">
+	
+	/* TITLE AND ANIMATION */
+	
+	#name {position:fixed;
+		display:table;
+		padding:100px;
+		border:solid black 0.05em;
+		right:20%;
+		background-color:#F0F0F0;
+		transition:all 0.2s;
+		font-family:Asul;
+		font-size:15pt;
+		box-shadow:0.2em 0.2em 0.5em #7F7F7F;/*margin:0 auto;margin-right:20%;*/
+		background-image:linear-gradient(to bottom, #F0F0F0, #eeeeee, #e5e5e5, #dddddd, #d2d2d2)
+		}
+	let:hover{text-transform:uppercase;}
+	.secret{display:none;}
+
+	#name:hover > * > span {display:none;font-size:15pt;}
+	#name:hover > * > span + .secret{display:block;}
+	#name:hover{transition:0.2s;transform:rotate(180deg);}
+	#titlegrow{display:table;margin:-10px;transition:all 0.5s;}
+	#titlegrow:hover {transition:all 0.2s; transform:rotate(-180deg);}
+	
+	/*LINKS BAR: add some js which chooses text size on page load. or use different css for different viewport widths */
+	
+	#info {
+		font-family:'Oxygen Mono',monospace;
+		font-size:15pt;
+		position:absolute;
+		top:0px;display:table;
+		position:sticky;
+		color:blue;
+		background-color:white;
+		opacity:0.4;
+		margin-left:50px;
+		transition: all .1s ease-in-out;
+		text-shadow:none;
+		z-index:100;
+		transition-delay:0.7s;
+	}
+		
+	#info:hover  {opacity:1;transition-delay:0s;}
+	/*make two sets of widths. when smaller than certain width, margins disappear.*/
+	
+	#info > a:hover{box-shadow:inset -2pt -2pt #0000FF; color:gray;}
+	#info >a {transition: all .5s ease-in-out;text-decoration:none; padding-right:3pt;}
+	
+/*	#maindecorative {display:table block; width:700px; font-size:15pt;font-family:Arial;border:solid black 0.2em; margin:0 auto;height:100%;overflow:hidden;position:sticky;top:125px; pointer-events:none;padding:0px 50px;max-width:80%; /*box-shadow:0.2em 0.2em 0.5em  #7F7F7F;}*/
+
+	#main {display:block;
+	font-size:15pt;font-family:Arial;text-shadow: 0.05em 0.07em 0.05em white; width:800px;max-width:90%; margin:0 auto;position:relative;top:118px; pointer-events:none; /**/}
+	
+	#maindecorative {
+		border:solid black 0.05em;
+		position:fixed;
+		height:100%;
+		width:800px;
+		font-size:15pt;
+		font-family:Arial;
+		left: 50%;
+		transform:translateX(-50%);
+		height:100%;
+		overflow:hidden;
+		pointer-events:none;
+		max-width:90%;
+		top:125px;
+	box-shadow:0.2em 0.2em 0.5em  #7F7F7F;}
+	
+	#main > * > a {
+		pointer-events:auto;
+	}
+	
+	
+	/* MAIN TEXT AND MAKING SURE EVRYTHING WORKS CORRECTLY */
+	p {
+		pointer-events:auto;
+		position:relative;
+		overflow:scroll;
+		text-indent:2em;
+		padding:0px 50px;
+		/*box-shadow:0.2em 0.2em 0.5em white*/
+	}
+	
+	p a:href {
+		text-decoration:underline;
+		text-shadow:0.1em 0.1em 0.1em blue;
+		font-family:'Oxygen Mono',monospace;
+	}
+	
+	h1{	font-size:20pt;
+		margin-left: 100px;
+		display:inline;
+	font-family:'Asul';
+	color:black;
+	letter-spacing:-0.05em;
+	/*text-shadow:0em 0.02em 0em white;*/
+	text-shadow:none;
+	text-align:center;
+	text-decoration:underline black;
+		padding: 0px 0.2em;
+	box-shadow: inset 0.06em -0.00em 0px rgba(0, 0, 0, 1);
+	background-image:linear-gradient(to right, #eeeeee, rgba(0, 0, 255, 0.0))
+
+	}
+	#home{}
+		
+		
+		/* thank you https://pixelflips.com/blog/anchor-links-with-a-fixed-header */ 
+		.anchor{
+		  display: block;
+		  height: 125px; /*same height as header*/
+		  margin-top: -125px; /*same height as header*/
+		  visibility: hidden;
+		}
+		
+	body{}
+			
+		/*p ul {list-style-type:none;list-style-position:inside;margin:100px;} this doesnt work idk why */
+			
+			/*PROJECTS FLEX BOX */
+			
+		#projects-container {display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-evenly;align-items:stretch;margin-right:10px;list-style-type:none;  list-style-position:inside;  padding:0px;}
+		
+		#project-group{pointer-events:auto;display:flex;flex-direction:row;flex-wrap:nowrap;align-content:stretch;align-items:stretch;padding: 1em 5px;margin-left:0px;flex-grow:1;flex-basis:290px;flex-shrink:1;list-style-type:none; list-style-position:inside;}
+
+		.project-image{
+			
+  box-shadow: 0.4em 0.4em 0.5em gray ;
+  height: 300px;
+  flex-basis:130px;
+  text-align: left;
+  flex-grow:3;
+  flex-shrink:1.5;
+  list-style-type:none;
+  list-style-position:inside;
+  padding:0px;
+  max-width:250px;
+  overflow:hidden;
+  background-size:auto 500px;
+  background-position:center;
+  background-attachment:local;
+  vertical-align:center;
+  background-max-height:100%;
+}
+
+		.project-text{
+			flex-basis:252px;
+			height:300px;
+  text-align: left;
+  flex-grow:1;
+  flex-shrink:3;
+  list-style-type:none;
+    list-style-position:inside;
+	  padding:0px;
+	  padding-left:1em;
+	  overflow-wrap:break-word;
+	  overflow:scroll;
+	  display:block;
+}
+.project-text:not(a){
+		  font-size:13pt;
+	  }
+
+.project-text a {
+	font-size:15pt;
+	display:block;
+	font-family:'Oxygen Mono',monospace;
+	color:black;
+	line-height:1.5em;
+	letter-spacing:-0.05em;
+	text-shadow:0.1em 0.1em 0.1em #D0D0D0;
+	text-align:left;
+	text-decoration:underline wavy black;
+		padding: 0px 0.2em;
+}
+
+/* SOCIALS FLEX BOX */
+.fa {color:rgba(0,0,100,0.4);}
+#contactsflex {display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-evenly;align-items:stretch;margin-right:10px;list-style-type:none;  list-style-position:inside;  padding:0px; font-family:'Oxygen Mono',monospace; font-size:10pt;pointer-events:auto;text-decoration:none;}
+
+.showemail {display:none;  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;}
+.email:hover .showemail{display:block;}
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- social media buttons!-->
+
+
+
+
+<!-- HEADER SHENANIGANS!-->
+
+<div id ="name">
+
+	<div id="titlegrow">
+	<span>Sherman Aline</span>
+		<span class="secret">Nershman Alie</span>
+	</div>
+
+</div>
+
+<!-- NAV BAR !-->
+
+<div id=sigh>
+<div id="main">
+<div id="info">
+	
+		<a href=#>^top</a>
+		<a href=#about>about</a>
+		<a href=#projects>projects</a>
+		<a href=#contact>contact</a>
+<!--	<a href=#links> links</a> 
+		<a href=#CV>CV</a>
+		<a > blog </a> !-->
+</div> 
+	
+<body>
+		
+		<!-- INTRO/HOME SECTION !-->
+<span class="anchor" id="about"> </span>
+<p>
+I am a Master's student at Toulouse School of Economics. My research interests are behavioral economics, digital economies, and energy markets and environmental sustainability. I'm primarily interested in building and testing microeconomic models but I'm also hoping to gain more experience with empirical econometrics.
+</p>
+<p> In my free time I work on a variety of small projects, some of which are shown below. They vary from data visualization, coding, and research. In the future I hope to have more research projects to show in their own section.
+</p>
+	
+	
+	<h1>Contact & Socials</h1>
+	<span class="anchor" id="contact"> </span> 
+	<!--another flexbox!-->
+	<ul id="contactsflex">
+		<li><span class="email"><a href="" >E-Mail</a><div class="showemail">get in touch with me at s m a 2 3 2 [at] g m a i l . c o m</div></span></li>
+		<li><a class="fa fa-linkedin"></a> <a href="https://www.linkedin.com/in/saline/">LinkedIn</a></li>
+		<li><a class="fa fa-github"></a> <a href="https://github.com/nershman">GitHub</a></li>
+		<li><a class="fa fa-twitter"></a> <a href="https://twitter.com/nershman">Twitter</a></li>
+	</ul>
+		<p></p>
+	
+	
+		<h1>Projects</h1>
+		<span class="anchor" id="projects"> </span>
+			<ul id="projects-container">
+				<ul id="project-group">
+				<li class="project-image" style="background-image:url('file:///Users/sma/Documents/GitHub/nershman.github.io/proj/circle3d.jpg');"></li>
+				<li class="project-text"><a href="file:///Users/sma/Documents/GitHub/nershman.github.io/proj/circle3d.jpg">Circle Intersections</a><br>
+					This is an art project I started to visualize a mathematical relationship between circles.</li>
+			</ul>
+			
+			<ul id="project-group">
+				<li class="project-image" style="background-image:url(file:///Users/sma/Documents/GitHub/nershman.github.io/proj/yelp.png); background-position:left;">
+				</li>
+				<li class="project-text"><a href="medium">Yelp Dataset Exploration</a><br> Examining behavior on yelp in order to get some practice with R. I wrote a blog post about it on Medium.
+				</li>
+			</ul>
+			
+				<ul id="project-group">
+				<li class="project-image" style="background-image:url(file:///Users/sma/Documents/GitHub/nershman.github.io/proj/essay.png); ">
+				</li>
+				<li class="project-text"><a href="https://www.slideshare.net/slideshow/embed_code/key/kZxpCiFnTgcMAJ">Undergraduate Research Project</a><br> Examining economic models of anxiety, I'm curious how these models can be expanded for online information-seeking behavior. I also developed unique visuals to explain the concepts found in the papers.</li>
+			</ul>
+<!--			<ul id="project-group">
+				<li class="project-image">image</li>
+				<li class="project-text">Lorem Ipsum<br>ating to online markets and globalization, energy markets and environmental sustainabilityn</li>
+			</ul>
+!-->
+			</ul>
+		
+		
+		<!-- ABOUT SECTION !-->
+<!--			<span class="anchor" id="bio"></span><p>
+				<ul class="timeline">
+				<li>1996 - Born in Los Angeles, California </li>
+				<li>2007 - discovered web design</li>
+				<li>June 2014 - became interested in economics</li>
+				<li>2014 - 2018 University of California, San Diego -- B.Sc Mathematics-Economics</li>
+				<li>2018 - wrote my first research paper in Economics</li>
+				<li>2019 - 2021 Toulouse School of Economics -- M2 Economics</li>
+			</ul>
+		</p></span> !-->
+			
+			<!-- LINKS SECTION !-->
+				<span class="anchor" id="links">
+<!--					<ul class="links">
+					<li>blogs </li>
+					<li>and whatever</li>
+				</ul>
+	!-->			
+		
+	</body>
+</div> 
+<div id = "maindecorative"></div>
+</div>
+
+</html>
