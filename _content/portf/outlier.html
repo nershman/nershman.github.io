@@ -1,0 +1,19 @@
+          <figure class="proj">
+            <h2>Evaluating Robustness Measures and Detecting Outliers in Soil Composition Data<time datetime="2021-06-01">01.06.2021</time></h2>
+            <span class="image-container"><figcaption><!--<a href="blog/wiki.html">Permalink</a> | --><a href="outlier/report.pdf"></a>&nbsp;</figcaption>
+              <img loading="lazy" alt="" src="outlier/preview.png">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> This project was part of my class on Outlier Detection at TSE. We first focus on robustness measures by calculating sensitivity to outliers for a selection of estimators. Then two different multivariate outlier detection methods are evaluated. </p>
+              <p>A sensitivity curve show visually how an estimator responds to a new value being included. If the function is bounded (as x grows, the estimator eventually stops changing) then that estimator is considered to be <i>B-Robust</i>. For a set of scale and location estimators, we calculate sensitivity curves and compare the results. From all of our estimators we then determined that median, trimmed mean, Huber-M, MAD, and IQR are B-robust.</p>
+              <p>In the second section, robust Mahalanobis distance, ordinary MD<label for="md">1</label><input id="md" type="checkbox"> <small>Mahalanobis Distance</small>,  and the Lof method are compared. First we discuss the methods and their properties, then we compare them. We discuss affine invariance, distinguishability between methods, computational ease and the explainability of each method.</p>
+              <h2>Data Source</h2>
+              <p>We used a dataset of chemical compositions from the bottom layer of agricultural soils in Northern Europe. 768 samples on an irregular grid were taken in two different layers, the top layer (0-20cm) and the bottom layer covering 1,800,000 km2. We select a subset of 6 elements found in the soil - Silicum dioxide, Titanium dioxide, Aluminium oxide,  Iron oxide, Manganese oxide and Magnesium oxide. This subset was chosen specifically because reveals differences in different outlier methods.</p>
+              <p>To download the same subset of the data that we used you can run <code>df <- bssbot[, c(5:10)]</code> with the package <code>mvoutlier</code> in R.</p>
+              <h2>Tools Used</h2>
+
+              <p><center>R Notebooks, ggplot2, mvoutlier</center></p>
+
+          </div>
+          </figure>

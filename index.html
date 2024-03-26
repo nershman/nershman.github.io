@@ -1,0 +1,259 @@
+<!-- built off of https://github.com/cadars/john-doe/ -->
+<!-- 
+Notes on planning:
+As I add more projects, I can place them all in blog and keep highlights in portfolio.
+If I end up writing non-portfolio stuff in blog then I can add a list to #home again for a bigger list than in portfolio
+
+-->
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <title>Sherman Aline</title>
+    <meta name="description" content="Site description">
+    
+    <!-- Recommended minimum -->
+    <meta property="og:title" content="Site title">
+    <meta property="og:description" content="Site description">
+    <meta property="og:image" content="img/site-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="stylesheet" type="text/css" title="fancy" href="frankenstein.css">
+    <link rel="stylesheet" type="text/css" title="plain" href="style.css">
+    <!-- first CSS is considered as defualt -->
+    
+  </head>
+  <body>
+    
+    <header>
+      <h1>
+        <a href="#home">Sherman Aline</a>
+      </h1>
+      <space></space> <!-- allow nav flex to the right in both themes-->
+      <nav>
+        <a href="#about">About</a>
+        <!--<a href="#news">Blog</a> TODO: re-enable --> 
+        <a href="#portfolio">Portfolio</a>
+      </nav>
+    </header>
+    
+    <main>
+      
+      <section id="home"> <!-- HOME -->
+        
+        <p>Hey there! I'm Sherman.</p> <p>You can read more about me <a href='#about'>here</a>, or you can see some of my favorite projects in my <a href='#portfolio'>portfolio</a>. Soon there will be some more in-depth write-ups on the <s>blog <small>(currently under construction)</small></s>.</p>
+	</br>
+      </section>
+      
+      <section id="about"> <!-- ABOUT -->
+        
+        <h1>About Me</h1>
+        <p>I'm a recent graduate of Toulouse School of Economics, receiving a Master's degree in Statistics and Econometrics with experience building machine learning models for social science research. I have an affinity for Natural Language Processing and value interpretability.</p>
+        <p>I'm a very curious person and I'm always finding new topics to explore. Recently I've been learning about DSP <label for="dsp">1</label><input id="dsp" type="checkbox"><small>Digital Signal Processing</small> and participating in the <a href="https://www.kaggle.com/competitions/birdclef-2022"> BirdCLEF2022 Kaggle Competition</a>.</p>
+          <br>
+          <p>Want to know more? Have a project you think I'd be interested in?<br> <a href="#contact">Contact me!</a> </p><br>
+
+        <br><br><br>
+        <h1>About the Site</h1>
+        <p>The website is based off of <a href="https://github.com/cadars/john-doe/"> John Doe by @cadars</a>. It's minimal and fast, with no javascript. I also use a bit of PHP to build the portfolio section and permalinks.</p>
+      </section>
+
+      <section id="contact">
+        Click <label for="c-info" class='ctact' >here</label> to reveal contact info (highly classified).<input type="checkbox" id="c-info">
+          <small>
+            <textarea readonly rows="3">
+ --
+            </textarea> 
+          </small><br><br>
+          <p><a href="#about">← back</a></p>
+      </section>
+      
+      <section id="news"> <!-- NEWS -->
+        
+        <article>
+          <h2>Blogging with Joe Bloggs <time datetime="2020-10-10">10.10.2020</time></h2>
+		  <p>This section isn't ready yet, sorry!</p>
+		  <figure>
+	  </figure>
+          <p> One <em>could</em> use this setup to write <s>a blog</s> short updates.</p>
+        </article>
+              
+        <article>
+          <h2><a href="https://example.com/">Why Your Cat Bites You</a> <time datetime="2004-12-12">12.12.2004</time></h2>
+          <p>Honestly you don't want to know.</p>
+        </article>
+      
+      </section>
+      
+      
+      <section id="portfolio"> <!-- PORTFOLIO -->
+
+        <div class="slides">
+                      <figure class="proj">
+            <h2>Examining Collaboration Structure of Wikipedia Editors<time datetime="2021-04-11">04.11.2021</time></h2>
+            <span class="image-container"><figcaption><!--<a href="blog/wiki.html">Permalink</a> | --><a href="https://github.com/nershman/WikipediaEditors/raw/main/report.pdf"></a> | <a href="https://github.com/nershman/WikipediaEditors">Git Repo</a></figcaption>
+              <img loading="lazy" alt="" class="cover" src="graph/preview.png">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> This paper was the final project for my Graph Analytics class at TSE. The goal of this project was to investigate the structure of Wikipedia editors, applying various network modelling tools.</p>
+              <p>The first step was to reshape the data. The original structure of the dataset was focused on the interaction between users and documents (document-user edges). In order to examine user interaction within a page, I used timestamps for each document to infer which user made an edit after another user, creating (user-user edges).</p>
+              <p>After building the graph and selecting a connected subgraph, different characteristics were calculated and visualized. These included Closeness, Betweenness, Eccentricity. The network was also compared against null models<label for="randomgraph">1</label><input id="randomgraph" type="checkbox"> <small>Erdos-Renyi and Barabasi-Albert models</small>, to determine that our network has significant connectedness and low transitivity.</p>
+              <p>Finally, Annealing, Louvain and Hierarchical clustering were performed and the optimal modularity scores were calculated. We discovered that hierarchical clustering gave the best modularity, giving an insight into how Wikipedians interact with each other when editing articles.</p>
+              <h2>Data Source</h2>
+              <p>The dataset is available through <a href="http://konect.cc/networks/edit-zhwiki/">konect.cc</a>. It is a bipartite edit network of Chinese-language Wikipedia edit events built from <a href="https://dumps.wikimedia.org/">public Wikimedia data</a>. Edits consist of edges connected to a specific document, along with timestamp metadata.</p>
+              <h2>Tools Used</h2>
+
+              <p><center>R Notebooks, igraph, dplyr, ggplot2</center></p>
+
+          </div>
+          </figure>			
+                      <figure class="proj force-vertical">
+            <h2>Evaluating Learning Methods for Imbalanced Data<time datetime="2021-01-04">01.04.2021</time></h2>
+            <span class="image-container"><figcaption><!--<a href="">Permalink</a> | --><a href="https://github.com/nershman/imbalanced-learning/blob/main/README.md"></a> | <a href="https://github.com/nershman/imbalanced-learning/">Git Repo</a></figcaption>
+              <img loading="lazy" alt="" src="imb/preview.png">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> This was the final project for a class on Machine Learning at TSE. The goal was to research and evaluate different methods for dealing with imbalanced data. Classification of imbalanced data can pose unique challenges when a certain type of erros is more costly than another. Credit card fraud is a good example: false negatives are more costly than false positives. Additionally, fraud is underrepresented in the data which makes it more difficult to train a model for it.</p>
+              <p>We implemented and evaluated 7 different methods. 5 of htese were loss based, including the novel approach Asymmetric Loss and one state of the art method Focal Loss. 2 of the methods were sampling based.</p>
+              <p> Evaluation and recommendations were given in two different contexts:
+                <ul><li>General model performance on imbalanced data</li><li>Performance for fraud detection</li></ul></p>
+              <p>In the general context, Asymmetric loss had the best performance thanks to a large ROC-AUC and rapid convergence. In the application to fraud detection, Asymmetric loss was also the best choice due to minimizing monetary losses and having good Prectision-Recall.</p>
+
+              <p>To evaluate the different approaches, the ROC-AUC curve, model speed, and reliability of convergence were examined. </p>
+              <h2>Data Source</h2>
+              <p>For this project a <a href="https://www.kaggle.com/mlg-ulb/creditcardfraud"> public dataset</a> of labelled credit card fraud data. Features consisted of 28 columns from PCA<label for ="pca">1</label><input id = "pca" type="checkbox"><small>Principal Component Analysis</small> alongside time and transaction amount.</p>
+              <h2>Tools Used</h2>
+
+              <p><center>Python, Keras, TensorFlow, sklearn, CNNs </center></p>
+
+          </div>
+          </figure>
+                      <figure class="proj force-vertical">
+            <h2>Exploring the Relationship Between Controversy and Engagement on Social Media Using SQL<time datetime="2021-04-08">04.08.2021</time></h2>
+            <span class="image-container"><figcaption><!--<a href="blog/wiki.html">Permalink</a> | --><a href="sql/report.pdf"></a>&nbsp;</figcaption>
+              <img loading="lazy" alt="" src="sql/preview.png">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> This paper was the final project for my Databases class at TSE. The goal of this project was to build an SQL database from several CSV files containing social media data and use aggregation and analytic commands to perform an EDA<label for="eda">1</label><input id="eda" type="checkbox"> <small>Exploratory Data Analysis</small>.</p>
+              <p> Moving beyond this, I wanted to disentangle the relationship between controversy and engagement. In the modern media climate, it is often lamented that shock and offense are an easy way to find an audience. However, Reddit uses upvotes and downvotes, so would this still apply?</p><p>
+              In order to investigate this I built an aggregate function which efficiently counted the number of replies a post recieved. This was done by counting the number of comments with a matching ID in the reply field. </p>
+              <p>The most interesting results from the exploratory analysis were that for our high-reply controversial subset, upvotes stayed positive but for the low-reply (representative) controversial subset, average upvotes were normally dispersed around 0. This may show that, in fact, Reddit upvotes and replies are highly correlated and thus for the most part use of upvotes is not used to express an opinion. And in this way Reddit does not increase engagement through controversial content.</p>
+
+              <h2>Tools Used</h2>
+
+              <p><center>MySQL, Python, matplotlib, bash</center></p>
+
+          </div>
+          </figure>
+                      <figure class="proj">
+            <h2>Extreme Value Theory: Application to Pfizer Stock Prices<time datetime="2021-01-08">01.08.2021</time></h2>
+            <span class="image-container"><figcaption><!--<a href="blog/wiki.html">Permalink</a> | --><a href="pfizer/report.pdf"></a>&nbsp;</figcaption>
+              <img loading="lazy" alt="" class="cover" src="pfizer/preview.jpg">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> This paper was the final project for my Extreme Value Theory class at TSE. The goal of this project was to detect extreme values longitudinal stock price data from Pfizer, and examine the differences between two methods.</p>
+              <p>The Pfizer stock was chosen as a good candidate for this project due to their work developing vaccine and the resulting bullishness in the market. Not only is there the impact of the global pandemic, but also expectations from investors surrounding news of vaccine development. Thus we should expect some extreme values due to these shocks.</p>
+              <p>Two different approaches were used to detect extreme values: <i>block maxima approach</i> and <i>peaks over threshold approach</i>. The former involves fitting a GEV<label for ="gev">1</label><input id = "gev" type="checkbox"><small>Generalized Extreme Value distribution</small>  and performing model selection. The latter involves choosing an appropriate threshold and fitting a stationary GPD.<label for ="gpd">2</label><input id = "gpd" type="checkbox"><small>Generalized Pareto Distribution</small> In both cases a return level plot is then derived and calculate an estimate of the 100-year return level and confidence intervals.</p>
+              <p>In our application we found that both methods achieved similar predictions, but the peak over threshold approach had smaller confidence intervals.</p>
+              <h2>Data Source</h2>
+              <p>The dataset is available at <a href="http://research.stlouisfed.org/fred2/">the FRED website</a>. In R it can be downloaded by running <code>getSymbols("PFE",source="yahoo")</code> with the <code>quantmod</code> package.
+              </p> 
+              <h2>Tools Used</h2>
+
+              <p><center>R Notebooks, base R graphing library, GEV</center></p>
+
+          </div>
+          </figure>
+                      <figure class="proj">
+            <h2>Evaluating Robustness Measures and Detecting Outliers in Soil Composition Data<time datetime="2021-06-01">01.06.2021</time></h2>
+            <span class="image-container"><figcaption><!--<a href="blog/wiki.html">Permalink</a> | --><a href="outlier/report.pdf"></a>&nbsp;</figcaption>
+              <img loading="lazy" alt="" src="outlier/preview.png">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> This project was part of my class on Outlier Detection at TSE. We first focus on robustness measures by calculating sensitivity to outliers for a selection of estimators. Then two different multivariate outlier detection methods are evaluated. </p>
+              <p>A sensitivity curve show visually how an estimator responds to a new value being included. If the function is bounded (as x grows, the estimator eventually stops changing) then that estimator is considered to be <i>B-Robust</i>. For a set of scale and location estimators, we calculate sensitivity curves and compare the results. From all of our estimators we then determined that median, trimmed mean, Huber-M, MAD, and IQR are B-robust.</p>
+              <p>In the second section, robust Mahalanobis distance, ordinary MD<label for="md">1</label><input id="md" type="checkbox"> <small>Mahalanobis Distance</small>,  and the Lof method are compared. First we discuss the methods and their properties, then we compare them. We discuss affine invariance, distinguishability between methods, computational ease and the explainability of each method.</p>
+              <h2>Data Source</h2>
+              <p>We used a dataset of chemical compositions from the bottom layer of agricultural soils in Northern Europe. 768 samples on an irregular grid were taken in two different layers, the top layer (0-20cm) and the bottom layer covering 1,800,000 km2. We select a subset of 6 elements found in the soil - Silicum dioxide, Titanium dioxide, Aluminium oxide,  Iron oxide, Manganese oxide and Magnesium oxide. This subset was chosen specifically because reveals differences in different outlier methods.</p>
+              <p>To download the same subset of the data that we used you can run <code>df <- bssbot[, c(5:10)]</code> with the package <code>mvoutlier</code> in R.</p>
+              <h2>Tools Used</h2>
+
+              <p><center>R Notebooks, ggplot2, mvoutlier</center></p>
+
+          </div>
+          </figure>
+                      <figure class="proj force-vertical">
+            <h2>Comparing different types of Imputation<time datetime="2019-11-27">11.27.2019</time></h2>
+            <span class="image-container"><figcaption><!--<a href="blog/wiki.html">Permalink</a> | --><a href="simulation/report.pdf"></a>&nbsp;</figcaption>
+              <img loading="lazy" alt="" src="simulation/preview.png">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> In this project we explain the methodology behind three different imputation techniques, single regression imputation,bootstrap multiple imputation, and iterative PCA<label for="pca">1</label><input id="pca" type="checkbox"> <small>Principal Component Analysis</small> imputation. We then run a simulation to evaluate and compare their benefits and drawbacks.</p>
+
+              <p>Our simulation is repeated five times. It involves generating missing data using the MCAR mechanism<label for="mcar">1</label><input id="mcar" type="checkbox"> <small>Missing Completely at Random</small> in order to reimpute it with each technique. With this simulation we can estimate a mean, and compare it to the true mean to evaluate bias. We also observe the variance across mean estimates from each repetition.</p>
+
+              <p>In addition to explaining the mechanism behind each technique, we explain any mathematical properties of them and necessary assumptions. To evaluate the three methods we compare their resulting parameter estimates (mean and variance) against the parameters of the original model.</p>
+
+              <p>We find that PCA and Boostrap imputation are roughy equivalent and Regression imputation perforsm the worst. PCA imputation approximates variance to the original data well, but this model cannot always be used due to reliance on strict assumptions. Bootstrap on the other hand, relies on much fewer assumptions. Regression imputation should only be used when the data is already known to be highly correlated.</p>
+
+              <h2>Tools Used</h2>
+
+              <p><center>R, LaTeX</center></p>
+
+          </div>
+          </figure>			
+			          <figure class="proj">
+            <h2>AskReddit Score Prediction<time datetime="2021-04-09">04.09.2021</time></h2>
+            <span class="image-container"><figcaption><!--<a href="blog/wiki.html">Permalink</a> | --><a href="https://github.com/nershman/AskRedditScorePrediction">Git Repo</a>&nbsp;</figcaption>
+              <img loading="lazy" alt="" class="cover" src="reddit/preview.png">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> This project was part of my Web Mining class at TSE. The goal of this project was to build useful features based on domain knowledge, build and iteratively improve a prediction model.</p>
+              <p>As a starting point for our model, we partially replicated <a href=https://www.aclweb.org/anthology/Q18-1009.pdf>Conversation Modeling on Reddit Using a Graph-Structured LSTM by Victoria Zayats and Mari Ostendorf</a>, representing the hierarchy and temporality of posts using a graph structure. </p>
+              <p>
+              We extend this model by building additional features from the text which act as indicators of the quality and nature of a post: capitalization, length, punctuation, links, emojis.</p>
+              <p>After building these two sets of features, we trained a lightGBM model on teh features and comment scores.</p>
+
+  			  <h2>Data Source</h2>
+              <p> The dataset is available <a href=https://www.kaggle.com/competitions/2021-reddit-score-prediction/data>on Kaggle</a> and consists of approx. 200,000 comments and associated metadata.</p>
+              <h2>Tools Used</h2>
+
+              <p><center>Python, Jupyter notebooks, NLTK, multiprocessing, matplotlib, sklearn, bash</center></p>
+
+          </div>
+          </figure>          
+          <figure style="background:#f0f0f0;">
+            <figcaption>That's all for now!<br>
+              <a href="#home">← back</a>
+              <!--<a style="margin-left:2em;" href="">↑ top</a> -->
+              </figcaption>
+          </figure>
+
+        </div>
+
+      </section>
+      
+    </main>
+    
+    <!-- ----------
+    LIGHTBOX IMAGES
+    ----------- -->
+
+    <!-- PHOTOS grid -->
+    
+    
+    <!-- Other images -->
+    
+    <a href="#about" class="lightbox" id="img-about"><img loading="lazy" alt="" src="Site%20title_files/bbb_003.png"></a>
+    
+  
+</body><style>.imu-2cgbi5n2pf-highlight{outline: 4px solid yellow !important}</style></html>

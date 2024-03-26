@@ -1,0 +1,21 @@
+          <figure class="proj">
+            <h2>AskReddit Score Prediction<time datetime="2021-04-09">04.09.2021</time></h2>
+            <span class="image-container"><figcaption><!--<a href="blog/wiki.html">Permalink</a> | --><a href="https://github.com/nershman/AskRedditScorePrediction">Git Repo</a>&nbsp;</figcaption>
+              <img loading="lazy" alt="" class="cover" src="reddit/preview.png">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> This project was part of my Web Mining class at TSE. The goal of this project was to build useful features based on domain knowledge, build and iteratively improve a prediction model.</p>
+              <p>As a starting point for our model, we partially replicated <a href=https://www.aclweb.org/anthology/Q18-1009.pdf>Conversation Modeling on Reddit Using a Graph-Structured LSTM by Victoria Zayats and Mari Ostendorf</a>, representing the hierarchy and temporality of posts using a graph structure. </p>
+              <p>
+              We extend this model by building additional features from the text which act as indicators of the quality and nature of a post: capitalization, length, punctuation, links, emojis.</p>
+              <p>After building these two sets of features, we trained a lightGBM model on teh features and comment scores.</p>
+
+  			  <h2>Data Source</h2>
+              <p> The dataset is available <a href=https://www.kaggle.com/competitions/2021-reddit-score-prediction/data>on Kaggle</a> and consists of approx. 200,000 comments and associated metadata.</p>
+              <h2>Tools Used</h2>
+
+              <p><center>Python, Jupyter notebooks, NLTK, multiprocessing, matplotlib, sklearn, bash</center></p>
+
+          </div>
+          </figure>

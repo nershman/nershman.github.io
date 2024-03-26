@@ -1,0 +1,81 @@
+<!-- built off of https://github.com/cadars/john-doe/ -->
+<!-- 
+Notes on planning:
+As I add more projects, I can place them all in blog and keep highlights in portfolio.
+If I end up writing non-portfolio stuff in blog then I can add a list to #home again for a bigger list than in portfolio
+
+-->
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <title>Sherman Aline</title>
+    <meta name="description" content="Site description">
+    
+    <!-- Recommended minimum -->
+    <meta property="og:title" content="Site title">
+    <meta property="og:description" content="Site description">
+    <meta property="og:image" content="img/site-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="stylesheet" type="text/css" title="fancy" href="../frankenstein.css">
+    <link rel="stylesheet" type="text/css" title="plain" href="../style.css">
+    <!-- first CSS is considered as defualt -->
+    
+  </head>
+  <body>
+    
+    <header>
+      <h1>
+        <a href="../#home">Sherman Aline</a>
+      </h1>
+      <space></space> <!-- allow nav flex to the right in both themes-->
+      <nav>
+        <a href="../#about">About</a>
+        <!--<a href="#news">Blog</a> TODO: re-enable --> 
+        <a href="../#portfolio">Portfolio</a>
+      </nav>
+    </header>
+    
+    <main>
+      
+      <section id="home"> <!-- HOME -->
+
+        <div class="slides">
+                    <figure class="proj">
+            <h2>Examining Collaboration Structure of Wikipedia Editors<time datetime="2021-04-11">04.11.2021</time></h2>
+            <span class="image-container"><figcaption><!--<a href="blog/wiki.html">Permalink</a> | --><a href="https://github.com/nershman/WikipediaEditors/raw/main/report.pdf"></a> | <a href="https://github.com/nershman/WikipediaEditors">Git Repo</a></figcaption>
+              <img loading="lazy" alt="" class="cover" src="preview.png">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> This paper was the final project for my Graph Analytics class at TSE. The goal of this project was to investigate the structure of Wikipedia editors, applying various network modelling tools.</p>
+              <p>The first step was to reshape the data. The original structure of the dataset was focused on the interaction between users and documents (document-user edges). In order to examine user interaction within a page, I used timestamps for each document to infer which user made an edit after another user, creating (user-user edges).</p>
+              <p>After building the graph and selecting a connected subgraph, different characteristics were calculated and visualized. These included Closeness, Betweenness, Eccentricity. The network was also compared against null models<label for="randomgraph">1</label><input id="randomgraph" type="checkbox"> <small>Erdos-Renyi and Barabasi-Albert models</small>, to determine that our network has significant connectedness and low transitivity.</p>
+              <p>Finally, Annealing, Louvain and Hierarchical clustering were performed and the optimal modularity scores were calculated. We discovered that hierarchical clustering gave the best modularity, giving an insight into how Wikipedians interact with each other when editing articles.</p>
+              <h2>Data Source</h2>
+              <p>The dataset is available through <a href="http://konect.cc/networks/edit-zhwiki/">konect.cc</a>. It is a bipartite edit network of Chinese-language Wikipedia edit events built from <a href="https://dumps.wikimedia.org/">public Wikimedia data</a>. Edits consist of edges connected to a specific document, along with timestamp metadata.</p>
+              <h2>Tools Used</h2>
+
+              <p><center>R Notebooks, igraph, dplyr, ggplot2</center></p>
+
+          </div>
+          </figure>
+
+          <figure style="background:#f0f0f0;">
+            <figcaption>That's all for now!<br>
+              <a href="../#portfolio">← back</a>
+              <!--<a style="margin-left:2em;" href="">↑ top</a> -->
+              </figcaption>
+          </figure>
+
+
+        </div>
+
+      </section>
+      
+    </main>
+    
+</body><style>.imu-2cgbi5n2pf-highlight{outline: 4px solid yellow !important}</style></html>

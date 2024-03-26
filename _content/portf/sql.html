@@ -1,0 +1,18 @@
+          <figure class="proj force-vertical">
+            <h2>Exploring the Relationship Between Controversy and Engagement on Social Media Using SQL<time datetime="2021-04-08">04.08.2021</time></h2>
+            <span class="image-container"><figcaption><!--<a href="blog/wiki.html">Permalink</a> | --><a href="sql/report.pdf"></a>&nbsp;</figcaption>
+              <img loading="lazy" alt="" src="sql/preview.png">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> This paper was the final project for my Databases class at TSE. The goal of this project was to build an SQL database from several CSV files containing social media data and use aggregation and analytic commands to perform an EDA<label for="eda">1</label><input id="eda" type="checkbox"> <small>Exploratory Data Analysis</small>.</p>
+              <p> Moving beyond this, I wanted to disentangle the relationship between controversy and engagement. In the modern media climate, it is often lamented that shock and offense are an easy way to find an audience. However, Reddit uses upvotes and downvotes, so would this still apply?</p><p>
+              In order to investigate this I built an aggregate function which efficiently counted the number of replies a post recieved. This was done by counting the number of comments with a matching ID in the reply field. </p>
+              <p>The most interesting results from the exploratory analysis were that for our high-reply controversial subset, upvotes stayed positive but for the low-reply (representative) controversial subset, average upvotes were normally dispersed around 0. This may show that, in fact, Reddit upvotes and replies are highly correlated and thus for the most part use of upvotes is not used to express an opinion. And in this way Reddit does not increase engagement through controversial content.</p>
+
+              <h2>Tools Used</h2>
+
+              <p><center>MySQL, Python, matplotlib, bash</center></p>
+
+          </div>
+          </figure>

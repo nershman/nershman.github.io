@@ -1,0 +1,82 @@
+<!-- built off of https://github.com/cadars/john-doe/ -->
+<!-- 
+Notes on planning:
+As I add more projects, I can place them all in blog and keep highlights in portfolio.
+If I end up writing non-portfolio stuff in blog then I can add a list to #home again for a bigger list than in portfolio
+
+-->
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <title>Sherman Aline</title>
+    <meta name="description" content="Site description">
+    
+    <!-- Recommended minimum -->
+    <meta property="og:title" content="Site title">
+    <meta property="og:description" content="Site description">
+    <meta property="og:image" content="img/site-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="stylesheet" type="text/css" title="fancy" href="../frankenstein.css">
+    <link rel="stylesheet" type="text/css" title="plain" href="../style.css">
+    <!-- first CSS is considered as defualt -->
+    
+  </head>
+  <body>
+    
+    <header>
+      <h1>
+        <a href="../#home">Sherman Aline</a>
+      </h1>
+      <space></space> <!-- allow nav flex to the right in both themes-->
+      <nav>
+        <a href="../#about">About</a>
+        <!--<a href="#news">Blog</a> TODO: re-enable --> 
+        <a href="../#portfolio">Portfolio</a>
+      </nav>
+    </header>
+    
+    <main>
+      
+      <section id="home"> <!-- HOME -->
+
+        <div class="slides">
+                    <figure class="proj">
+            <h2>Extreme Value Theory: Application to Pfizer Stock Prices<time datetime="2021-01-08">01.08.2021</time></h2>
+            <span class="image-container"><figcaption><!--<a href="blog/wiki.html">Permalink</a> | --><a href="report.pdf"></a>&nbsp;</figcaption>
+              <img loading="lazy" alt="" class="cover" src="preview.jpg">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> This paper was the final project for my Extreme Value Theory class at TSE. The goal of this project was to detect extreme values longitudinal stock price data from Pfizer, and examine the differences between two methods.</p>
+              <p>The Pfizer stock was chosen as a good candidate for this project due to their work developing vaccine and the resulting bullishness in the market. Not only is there the impact of the global pandemic, but also expectations from investors surrounding news of vaccine development. Thus we should expect some extreme values due to these shocks.</p>
+              <p>Two different approaches were used to detect extreme values: <i>block maxima approach</i> and <i>peaks over threshold approach</i>. The former involves fitting a GEV<label for ="gev">1</label><input id = "gev" type="checkbox"><small>Generalized Extreme Value distribution</small>  and performing model selection. The latter involves choosing an appropriate threshold and fitting a stationary GPD.<label for ="gpd">2</label><input id = "gpd" type="checkbox"><small>Generalized Pareto Distribution</small> In both cases a return level plot is then derived and calculate an estimate of the 100-year return level and confidence intervals.</p>
+              <p>In our application we found that both methods achieved similar predictions, but the peak over threshold approach had smaller confidence intervals.</p>
+              <h2>Data Source</h2>
+              <p>The dataset is available at <a href="http://research.stlouisfed.org/fred2/">the FRED website</a>. In R it can be downloaded by running <code>getSymbols("PFE",source="yahoo")</code> with the <code>quantmod</code> package.
+              </p> 
+              <h2>Tools Used</h2>
+
+              <p><center>R Notebooks, base R graphing library, GEV</center></p>
+
+          </div>
+          </figure>
+
+          <figure style="background:#f0f0f0;">
+            <figcaption>That's all for now!<br>
+              <a href="../#portfolio">← back</a>
+              <!--<a style="margin-left:2em;" href="">↑ top</a> -->
+              </figcaption>
+          </figure>
+
+
+        </div>
+
+      </section>
+      
+    </main>
+    
+</body><style>.imu-2cgbi5n2pf-highlight{outline: 4px solid yellow !important}</style></html>

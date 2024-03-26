@@ -1,0 +1,22 @@
+          <figure class="proj force-vertical">
+            <h2>Evaluating Learning Methods for Imbalanced Data<time datetime="2021-01-04">01.04.2021</time></h2>
+            <span class="image-container"><figcaption><!--<a href="">Permalink</a> | --><a href="https://github.com/nershman/imbalanced-learning/blob/main/README.md"></a> | <a href="https://github.com/nershman/imbalanced-learning/">Git Repo</a></figcaption>
+              <img loading="lazy" alt="" src="imb/preview.png">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> This was the final project for a class on Machine Learning at TSE. The goal was to research and evaluate different methods for dealing with imbalanced data. Classification of imbalanced data can pose unique challenges when a certain type of erros is more costly than another. Credit card fraud is a good example: false negatives are more costly than false positives. Additionally, fraud is underrepresented in the data which makes it more difficult to train a model for it.</p>
+              <p>We implemented and evaluated 7 different methods. 5 of htese were loss based, including the novel approach Asymmetric Loss and one state of the art method Focal Loss. 2 of the methods were sampling based.</p>
+              <p> Evaluation and recommendations were given in two different contexts:
+                <ul><li>General model performance on imbalanced data</li><li>Performance for fraud detection</li></ul></p>
+              <p>In the general context, Asymmetric loss had the best performance thanks to a large ROC-AUC and rapid convergence. In the application to fraud detection, Asymmetric loss was also the best choice due to minimizing monetary losses and having good Prectision-Recall.</p>
+
+              <p>To evaluate the different approaches, the ROC-AUC curve, model speed, and reliability of convergence were examined. </p>
+              <h2>Data Source</h2>
+              <p>For this project a <a href="https://www.kaggle.com/mlg-ulb/creditcardfraud"> public dataset</a> of labelled credit card fraud data. Features consisted of 28 columns from PCA<label for ="pca">1</label><input id = "pca" type="checkbox"><small>Principal Component Analysis</small> alongside time and transaction amount.</p>
+              <h2>Tools Used</h2>
+
+              <p><center>Python, Keras, TensorFlow, sklearn, CNNs </center></p>
+
+          </div>
+          </figure>

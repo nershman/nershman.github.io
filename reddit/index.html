@@ -1,0 +1,83 @@
+<!-- built off of https://github.com/cadars/john-doe/ -->
+<!-- 
+Notes on planning:
+As I add more projects, I can place them all in blog and keep highlights in portfolio.
+If I end up writing non-portfolio stuff in blog then I can add a list to #home again for a bigger list than in portfolio
+
+-->
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <title>Sherman Aline</title>
+    <meta name="description" content="Site description">
+    
+    <!-- Recommended minimum -->
+    <meta property="og:title" content="Site title">
+    <meta property="og:description" content="Site description">
+    <meta property="og:image" content="img/site-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="stylesheet" type="text/css" title="fancy" href="../frankenstein.css">
+    <link rel="stylesheet" type="text/css" title="plain" href="../style.css">
+    <!-- first CSS is considered as defualt -->
+    
+  </head>
+  <body>
+    
+    <header>
+      <h1>
+        <a href="../#home">Sherman Aline</a>
+      </h1>
+      <space></space> <!-- allow nav flex to the right in both themes-->
+      <nav>
+        <a href="../#about">About</a>
+        <!--<a href="#news">Blog</a> TODO: re-enable --> 
+        <a href="../#portfolio">Portfolio</a>
+      </nav>
+    </header>
+    
+    <main>
+      
+      <section id="home"> <!-- HOME -->
+
+        <div class="slides">
+                    <figure class="proj">
+            <h2>AskReddit Score Prediction<time datetime="2021-04-09">04.09.2021</time></h2>
+            <span class="image-container"><figcaption><!--<a href="blog/wiki.html">Permalink</a> | --><a href="https://github.com/nershman/AskRedditScorePrediction">Git Repo</a>&nbsp;</figcaption>
+              <img loading="lazy" alt="" class="cover" src="preview.png">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> This project was part of my Web Mining class at TSE. The goal of this project was to build useful features based on domain knowledge, build and iteratively improve a prediction model.</p>
+              <p>As a starting point for our model, we partially replicated <a href=https://www.aclweb.org/anthology/Q18-1009.pdf>Conversation Modeling on Reddit Using a Graph-Structured LSTM by Victoria Zayats and Mari Ostendorf</a>, representing the hierarchy and temporality of posts using a graph structure. </p>
+              <p>
+              We extend this model by building additional features from the text which act as indicators of the quality and nature of a post: capitalization, length, punctuation, links, emojis.</p>
+              <p>After building these two sets of features, we trained a lightGBM model on teh features and comment scores.</p>
+
+  			  <h2>Data Source</h2>
+              <p> The dataset is available <a href=https://www.kaggle.com/competitions/2021-reddit-score-prediction/data>on Kaggle</a> and consists of approx. 200,000 comments and associated metadata.</p>
+              <h2>Tools Used</h2>
+
+              <p><center>Python, Jupyter notebooks, NLTK, multiprocessing, matplotlib, sklearn, bash</center></p>
+
+          </div>
+          </figure>
+
+          <figure style="background:#f0f0f0;">
+            <figcaption>That's all for now!<br>
+              <a href="../#portfolio">← back</a>
+              <!--<a style="margin-left:2em;" href="">↑ top</a> -->
+              </figcaption>
+          </figure>
+
+
+        </div>
+
+      </section>
+      
+    </main>
+    
+</body><style>.imu-2cgbi5n2pf-highlight{outline: 4px solid yellow !important}</style></html>

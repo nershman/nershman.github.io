@@ -1,0 +1,21 @@
+          <figure class="proj force-vertical">
+            <h2>Comparing different types of Imputation<time datetime="2019-11-27">11.27.2019</time></h2>
+            <span class="image-container"><figcaption><!--<a href="blog/wiki.html">Permalink</a> | --><a href="simulation/report.pdf"></a>&nbsp;</figcaption>
+              <img loading="lazy" alt="" src="simulation/preview.png">
+              </span>
+              <div class="desc">
+                <h2> Overview </h2>
+              <p> In this project we explain the methodology behind three different imputation techniques, single regression imputation,bootstrap multiple imputation, and iterative PCA<label for="pca">1</label><input id="pca" type="checkbox"> <small>Principal Component Analysis</small> imputation. We then run a simulation to evaluate and compare their benefits and drawbacks.</p>
+
+              <p>Our simulation is repeated five times. It involves generating missing data using the MCAR mechanism<label for="mcar">1</label><input id="mcar" type="checkbox"> <small>Missing Completely at Random</small> in order to reimpute it with each technique. With this simulation we can estimate a mean, and compare it to the true mean to evaluate bias. We also observe the variance across mean estimates from each repetition.</p>
+
+              <p>In addition to explaining the mechanism behind each technique, we explain any mathematical properties of them and necessary assumptions. To evaluate the three methods we compare their resulting parameter estimates (mean and variance) against the parameters of the original model.</p>
+
+              <p>We find that PCA and Boostrap imputation are roughy equivalent and Regression imputation perforsm the worst. PCA imputation approximates variance to the original data well, but this model cannot always be used due to reliance on strict assumptions. Bootstrap on the other hand, relies on much fewer assumptions. Regression imputation should only be used when the data is already known to be highly correlated.</p>
+
+              <h2>Tools Used</h2>
+
+              <p><center>R, LaTeX</center></p>
+
+          </div>
+          </figure>
